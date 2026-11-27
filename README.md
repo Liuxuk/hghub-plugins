@@ -15,7 +15,7 @@ HGhub（[Minireel/HGhub](https://github.com/Minireel/HGhub)）插件仓库。
 在 HGhub → 插件中心 →「导入与订阅」→「从网址导入插件或订阅列表」，填入：
 
 ```
-https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/manifest.json
+https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/manifest.json
 ```
 
 导入后可保存为订阅，以后一键刷新。
@@ -23,7 +23,7 @@ https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/manifest.json
 ### 方式二：直接导入单个插件
 
 ```
-https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/kuaizhui.js
+https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js
 ```
 
 ### 方式三：粘贴代码

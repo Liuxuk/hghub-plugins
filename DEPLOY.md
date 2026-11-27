@@ -4,7 +4,7 @@
 
 ```
 hghub-plugin-deploy/
-├── README.md              # 仓库首页说明（已含 YOUR_NAME 占位符）
+├── README.md              # 仓库首页说明（已含 Liuxuk 占位符）
 ├── .gitignore
 ├── check-deploy.mjs       # 上传前自检脚本
 └── plugins/
@@ -41,12 +41,12 @@ hghub-plugin-deploy/
 
 创建后记下仓库地址，形如：
 ```
-https://github.com/YOUR_NAME/hghub-plugins.git
+https://github.com/Liuxuk/hghub-plugins.git
 ```
 
 ### 2. 本地初始化并推送
 
-在本目录执行（把 `YOUR_NAME` / `hghub-plugins` 换成你的）：
+在本目录执行（把 `Liuxuk` / `hghub-plugins` 换成你的）：
 
 ```powershell
 cd "C:\Users\Admin\Desktop\DSH文档\hghub-plugin-deploy"
@@ -60,7 +60,7 @@ git config user.email "你的邮箱@example.com"
 
 git add .
 git commit -m "feat: 快追影视 HGhub 插件 v1.0.0"
-git remote add origin https://github.com/YOUR_NAME/hghub-plugins.git
+git remote add origin https://github.com/Liuxuk/hghub-plugins.git
 git push -u origin main
 ```
 
@@ -74,12 +74,12 @@ git push -u origin main
 
 ## 三、改掉占位地址
 
-推送前必须把两处 `YOUR_NAME/YOUR_REPO` 改成你的真实路径：
+推送前必须把两处 `Liuxuk/hghub-plugins` 改成你的真实路径：
 
 ### 1. `plugins/kuaizhui.js` 里的 `updateUrl`
 
 ```js
-updateUrl: "https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/kuaizhui.js",
+updateUrl: "https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js",
 ```
 
 改成，例如：
@@ -94,7 +94,7 @@ updateUrl: "https://cdn.jsdelivr.net/gh/zhangsan/hghub-plugins@main/plugins/kuai
 
 ### 2. `README.md` 里的导入地址
 
-把文中三处 `YOUR_NAME/YOUR_REPO` 换成真实路径。
+把文中三处 `Liuxuk/hghub-plugins` 换成真实路径。
 
 改完重跑自检：
 ```powershell
@@ -111,7 +111,7 @@ node check-deploy.mjs
 2. **Source** 选 `Deploy from a branch`
 3. **Branch** 选 `main`，目录选 `/ (root)`
 4. 点 **Save**，等 1–2 分钟
-5. 访问 `https://YOUR_NAME.github.io/hghub-plugins/plugins/manifest.json` 验证
+5. 访问 `https://Liuxuk.github.io/hghub-plugins/plugins/manifest.json` 验证
 
 > Pages 默认会跑 Jekyll，下划线开头的文件会被忽略。本仓库没有这类文件，无需加 `.nojekyll`。但**如果以后加了** `_` 开头的文件，记得在根目录放一个空的 `.nojekyll`。
 
@@ -123,13 +123,13 @@ node check-deploy.mjs
 
 ```powershell
 # 1. Raw 单文件能取到
-curl.exe -I https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/kuaizhui.js
+curl.exe -I https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js
 
 # 2. 列表能取到且是合法 JSON
-curl.exe https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/manifest.json
+curl.exe https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/manifest.json
 
 # 3. 文件内容开头正确
-curl.exe https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/kuaizhui.js | Select-Object -First 3
+curl.exe https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js | Select-Object -First 3
 ```
 
 预期：
@@ -148,7 +148,7 @@ curl.exe https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/
 HGhub → 插件中心 →「导入与订阅」→ 地址栏填：
 
 ```
-https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/manifest.json
+https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/manifest.json
 ```
 
 点「读取列表或插件」→ 勾选条目 →「导入所选插件」→ 成功后点「保存订阅」。
@@ -163,7 +163,7 @@ https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/manifest.
 
 手机导入时如果 Raw 被墙：
 - 改用 jsDelivr 地址（国内通常直连可用）：
-  `https://cdn.jsdelivr.net/gh/YOUR_NAME/hghub-plugins@main/plugins/manifest.json`
+  `https://cdn.jsdelivr.net/gh/Liuxuk/hghub-plugins@main/plugins/manifest.json`
 - 或按 `kuaizhui-lite.js` 粘贴导入；
 - 插件跑起来后仍需要代理才能访问 `cvo.kuaicloud.one`（见 `06-network-proxy-guide.md`）。
 
@@ -198,7 +198,7 @@ https://raw.githubusercontent.com/YOUR_NAME/hghub-plugins/main/plugins/manifest.
 | Raw 地址返回 404 | 检查分支名是不是 `main`（老仓库可能是 `master`）、路径大小写、文件是否真的推上去了 |
 | HGhub 导入报「列表与文件不一致」 | `manifest.json` 的 id/version/name 必须与插件 `meta` 完全一致 |
 | HGhub 导入报「不是合法 JSON/JS」 | 可能把 GitHub 的 HTML 页面地址当 Raw 地址填了；Raw 地址应含 `raw.githubusercontent.com` |
-| 检查更新一直「已是最新」 | Raw 有 5 分钟缓存；或 `updateUrl` 还留着 `YOUR_NAME` 占位符；或版本号没提高 |
+| 检查更新一直「已是最新」 | Raw 有 5 分钟缓存；或 `updateUrl` 还留着 `Liuxuk` 占位符；或版本号没提高 |
 | 私有仓库能否用 | 不能，HGhub 下载时没有你的 GitHub 凭据 |
 
 ---

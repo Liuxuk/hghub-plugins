@@ -29,9 +29,9 @@ export const meta = {
   author: "you",
   homepage: "https://www.kuaizhui.tv/",
   // 部署后改成你的真实地址，例如：
-  // https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/kuaizhui.js
-  // 或 GitHub Pages: https://YOUR_NAME.github.io/YOUR_REPO/plugins/kuaizhui.js
-  updateUrl: "https://raw.githubusercontent.com/YOUR_NAME/YOUR_REPO/main/plugins/kuaizhui.js",
+  // https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js
+  // 或 GitHub Pages: https://Liuxuk.github.io/hghub-plugins/plugins/kuaizhui.js
+  updateUrl: "https://raw.githubusercontent.com/Liuxuk/hghub-plugins/main/plugins/kuaizhui.js",
   linkDomains: ["www.kuaizhui.tv", "kuaizhui.tv"],
   defaultHeaders: {
     Referer: "https://www.kuaizhui.tv/",
